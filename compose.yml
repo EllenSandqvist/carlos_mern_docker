@@ -57,7 +57,9 @@ services:
     # specify environment variables for the api service
     # for demo purposes, we're using a local mongodb instance
     environment:
-      DB_URL: mongodb://db/anime
+      DB_URL: ${DB_URL}
+    env_file:
+      - .env # Ladda variabler från .env-filen
 
     # establish docker compose watch mode for the api service
     develop:
